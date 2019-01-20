@@ -1,10 +1,15 @@
-const determineSwitch = require('determineSwitch')
+pry = require('pryjs')
 
-function bubbleSort(collection) {
-  var sorted = determineSwitch(collection)
+const determineSwitch = require('./determineSwitch')
 
-  while (switched_element == true){
-
+function bubbleSort(collection){
+  var sorted = false;
+  var status_switch = determineSwitch(collection);
+  while (status_switch.switched == true){
+    let next_round = status_switch.collection;
+    status_switch = determineSwitch(next_round);
   }
-
+  return status_switch.collection;
 }
+
+module.exports = bubbleSort
